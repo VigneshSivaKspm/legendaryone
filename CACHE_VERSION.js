@@ -1,0 +1,3 @@
+const CACHE_VERSION = 'v1';
+// ...other code if necessary...
+

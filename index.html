@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Legendary One - Innovative Digital Solutions</title>
+  <meta name="description"
+    content="Legendary One offers innovative digital solutions including web development, software development, branding, and more.">
+  <meta name="keywords"
+    content="Innovative Digital Solutions, web development, software development, branding, digital solutions, innovation">
+  <meta name="author" content="Legendary One">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/android-chrome-512x512.png">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/icon-512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192-maskable.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/icon-512-maskable.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Inline critical CSS -->
+  <style>
+    /* Critical CSS */
+    body {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      font-family: var(--default-font);
+      overflow-x: hidden;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .header {
+      color: var(--default-color);
+      background-color: var(--background-color);
+      padding: 10px 20px;
+      transition: all 0.5s;
+      z-index: 997;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      padding: 120px 0 80px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .hero:before {
+      content: "";
+      background: color-mix(in srgb, var(--background-color), transparent 30%);
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-logo {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      margin-top: -50px;
+      margin-bottom: -20px;
+    }
+
+    .logo-part {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1.5);
+      filter: blur(15px);
+    }
+
+    #dynamic-text {
+      font-size: 3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #00ff88, #00aaff, #ff00ff);
+      background-size: 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-animation 3s infinite linear;
+    }
+
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0%;
+      }
+
+      100% {
+        background-position: 100%;
+      }
+    }
+
+    #tagline {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #00ff88;
+      text-transform: uppercase;
+      opacity: 0;
+    }
+
+    @keyframes logo-appear {
+      0% {
+        transform: scale(1.5);
+        opacity: 0;
+        filter: blur(15px);
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    @keyframes text-fade {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      bottom: 15px;
+      left: 15px;
+      background-color: var(--accent-color);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 40px;
+      z-index: 100;
+      /* Center the icon using Flexbox */
+      display: flex;
+      /* Enable Flexbox */
+      align-items: center;
+      /* Vertically center the icon */
+      justify-content: center;
+      /* Horizontally center the icon */
+    }
+
+    .whatsapp-float i {
+      color: black;
+      /* Icon color */
+      font-size: 30px;
+      /* Adjust icon size if needed */
+    }
+  </style>
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print"
+    onload="this.media='all'">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#121212">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Legendary One">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/android-chrome-512x512.png">
+  <link rel="canonical" href="https://www.legendaryone.in/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Legendary One - Innovative Digital Solutions">
+  <meta property="og:description"
+    content="Legendary One offers innovative digital solutions including web development, software development, branding, and more.">
+  <meta property="og:image" content="https://www.legendaryone.in/assets/img/logo.png">
+  <meta property="og:url" content="https://www.legendaryone.in">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Legendary One - Innovative Digital Solutions">
+  <meta name="twitter:description"
+    content="Legendary One offers innovative digital solutions including web development, software development, branding, and more.">
+  <meta name="twitter:image" content="https://www.legendaryone.in/assets/img/logo.png">
+
+  <!-- Structured Data for FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What services does Legendary One offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Legendary One offers web development, software development, branding, and digital solutions."
+      }
+    }, {
+      "@type": "Question",
+      "name": "How can I contact Legendary One?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can contact us via email at legendaryoneff@gmail.com or call us at +91 733 959 6165."
+      }
+    }]
+  }
+  </script>
+
+  <!-- Structured Data for Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Legendary One",
+    "url": "https://www.legendaryone.com",
+    "logo": "https://www.legendaryone.com/assets/img/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91 733 959 6165",
+      "contactType": "Customer Service",
+      "email": "legendaryoneff@gmail.com"
+    },
+    "sameAs": [
+      "https://www.instagram.com/legendary_one_official",
+      "https://www.linkedin.com/in/vignesh-k-59ba47183",
+      "https://www.facebook.com/vignesh.siva.kspm",
+      "https://x.com/vigneshsivakspm"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data for Articles -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Legendary One - Innovative Digital Solutions",
+    "image": "https://www.legendaryone.com/assets/img/logo.png",
+    "author": {
+      "@type": "Person",
+      "name": "Vignesh Siva"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Legendary One",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.legendaryone.com/assets/img/logo.png"
+      }
+    },
+    "datePublished": "2025-15-01",
+    "dateModified": "2025-15-01"
+  }
+  </script>
+
+  <!-- Structured Data for Products -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Software Development Service",
+    "image": "https://www.legendaryone.com/assets/img/services/software-development.jpg",
+    "description": "We provide custom software development services to meet your business needs. Our team creates responsive and dynamic software solutions tailored to your business.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Legendary One"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.legendaryone.com/service-details.html#software-development",
+      "priceCurrency": "INR",
+      "price": "1000",
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "18"
+    },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Karthi Keyan"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "The software development service from Legendary One was outstanding. The team was knowledgeable and delivered a robust solution that met all our requirements."
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Branding Service",
+    "image": "https://www.legendaryone.com/assets/img/services/branding.jpg",
+    "description": "We offer comprehensive branding services including logo design and multimedia editing.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Legendary One"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.legendaryone.com/service-details.html#branding",
+      "priceCurrency": "INR",
+      "price": "700",
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "15"
+    },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Tamil Arasan"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "The branding service from Legendary One helped us establish a strong brand identity. Their team was creative and professional."
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Technical Solutions Service",
+    "image": "https://www.legendaryone.com/assets/img/services/technical-solutions.jpg",
+    "description": "Our experts provide technical solutions to streamline your business operations.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Legendary One"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.legendaryone.com/service-details.html#technical-solutions",
+      "priceCurrency": "INR",
+      "price": "800",
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "12"
+    },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Sasi Dharan"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "The technical solutions provided by Legendary One were top-notch. They helped us streamline our operations efficiently."
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "College Projects Service",
+    "image": "https://www.legendaryone.com/assets/img/services/college-projects.jpg",
+    "description": "We assist students with their college projects, providing guidance and technical support.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Legendary One"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.legendaryone.com/service-details.html#college-projects",
+      "priceCurrency": "INR",
+      "price": "1500",
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "20"
+    },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Divya Priya"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Legendary One provided excellent guidance and support for my college project. Their expertise was invaluable."
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "E-commerce Solutions Service",
+    "image": "https://www.legendaryone.com/assets/img/services/ecommerce-solutions.jpg",
+    "description": "We develop e-commerce platforms that help you sell your products online effectively.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Legendary One"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.legendaryone.com/service-details.html#ecommerce-solutions",
+      "priceCurrency": "INR",
+      "price": "1200",
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "22"
+    },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Saravanan"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "The e-commerce solutions provided by Legendary One were fantastic. Our online store is now more efficient and user-friendly."
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Web Development Service",
+    "image": "https://www.legendaryone.com/assets/img/services/web-development.jpg",
+    "description": "Our team creates responsive and dynamic websites tailored to your business.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Legendary One"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.legendaryone.com/service-details.html#web-development",
+      "priceCurrency": "INR",
+      "price": "500",
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "24"
+    },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "John Doe"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "The web development service provided by Legendary One was exceptional. The team was professional and delivered a high-quality website that exceeded our expectations."
+    }
+  }
+  </script>
+
+  <!-- Structured Data for BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.legendaryone.in/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://www.legendaryone.in/#about"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Services",
+      "item": "https://www.legendaryone.in/#services"
+    },{
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Portfolio",
+      "item": "https://www.legendaryone.in/#portfolio"
+    },{
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Contact",
+      "item": "https://www.legendaryone.in/#contact"
+    }]
+  }
+  </script>
+
+  <!-- Structured Data for LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Legendary One",
+    "image": "https://www.legendaryone.in/assets/img/logo.png",
+    "@id": "https://www.legendaryone.in/",
+    "url": "https://www.legendaryone.in/",
+    "telephone": "+91 733 959 6165",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4, Eswaramoorthi Street, Kasipalayam",
+      "addressLocality": "Gobichettipalayam",
+      "addressRegion": "Erode",
+      "postalCode": "638454",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 11.457085,
+      "longitude": 77.326218
+    },
+    "sameAs": [
+      "https://www.instagram.com/legendary_one_official",
+      "https://www.linkedin.com/in/vignesh-k-59ba47183",
+      "https://www.facebook.com/vignesh.siva.kspm",
+      "https://x.com/vigneshsivakspm"
+    ]
+  }
+  </script>
+
+  <!-- =======================================================
+  * Template Name: Legendary One
+  * Author: Vignesh Siva
+  * License: Your License Information
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top" role="banner">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0" aria-label="Legendary One Logo">
+        <img src="assets/img/logo.png" alt="Legendary One Logo">
+        <h1 class="sitename">LEGENDARY ONE</h1>
+      </a>
+
+      <!-- Theme Toggle Switch -->
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" aria-label="Toggle dark mode" />
+          <div class="slider round"></div>
+        </label>
+      </div>
+
+      <nav id="navmenu" class="navmenu" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#hero" class="active" aria-current="page">Home<br></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="/service-details">Services</a></li>
+          <li><a href="/portfolio-details">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+
+
+    </div>
+  </header>
+
+  <main class="main" role="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background" aria-labelledby="hero-heading">
+
+      <img src="assets/img/hero-bg.jpg" alt="Hero Background Image" width="1920" height="1080" data-aos="fade-in">
+
+      <div class="container">
+
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-6 col-lg-8">
+            <!-- Logo Container -->
+            <div class="hero-logo" role="img" aria-label="Company Logo">
+              <img src="assets/img/logopart1.png" alt="Logo Part 1" class="logo-part part-1">
+              <img src="assets/img/logopart2.png" alt="Logo Part 2" class="logo-part part-2">
+              <img src="assets/img/logopart3.png" alt="Logo Part 3" class="logo-part part-3">
+              <img src="assets/img/logopart4.png" alt="Logo Part 4" class="logo-part part-4">
+            </div>
+            <!-- Dynamic Text -->
+            <h1 id="dynamic-text" tabindex="0"></h1>
+            <!-- Tagline -->
+            <p id="tagline" tabindex="0">Where Innovation Meets Excellence</p>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section" aria-labelledby="about-heading">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <!-- About Heading and Content -->
+          <div class="col-12 text-center">
+            <h2 id="about-heading" class="font-weight-bold">MAKING LEGENDS EVERYDAY!</h2>
+            <p class="about-content">
+              Welcome to <span class="accent-text">LEGENDARY-ONE</span>, the place where pixels meet perfection and
+              coffee never goes cold!
+              No corporate nonsense—just a passionate team running on pure inspiration and a keyboard that refuses
+              to quit.
+              If you need something built?, we’ll create it faster than you can say "404 Error!".
+            </p>
+          </div>
+
+
+          <!-- Who We Are Section -->
+          <div class="col-lg-6 order-1 order-lg-1 content">
+            <h3>Who We Are?</h3>
+            <p class="fst-italic">
+              Meet the squad that turns tech nightmares into digital daydreams. We're <span
+                class="accent-text">Legendary One</span> – a bunch of caffeinated code warriors, idea architects, and
+              pixel
+              perfectionists who believe the best solution is the one that makes you say, "Why didn’t I think of that?"
+              We're the
+              people who talk with Keyboard.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> We drink coffee like it's a programming language.</li>
+              <li><i class="bi bi-check2-all"></i> We solve problems before you even know they exist,</li>
+              <li><i class="bi bi-check2-all"></i> like superheroes but with laptops.</li>
+              <li><i class="bi bi-check2-all"></i> We're not just developers; we're digital wizards casting spells with
+                code!</li>
+            </ul>
+          </div>
+
+          <!-- What We Do Section -->
+          <div class="col-lg-6 order-2 order-lg-2 content">
+            <h3>What We Do?</h3>
+            <p class="fst-italic">
+              Let’s get down to business: what do we do? Well, we make tech look easy, fun, and way cooler than it
+              actually is.
+              From building websites that’ll make your customers go “Wow!” to crafting apps that work faster than a
+              caffeinated
+              squirrel, we’re all about making things that work, look good, and make you smile.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> We create websites that are more addictive than your favorite social
+                media app.
+              </li>
+              <li><i class="bi bi-check2-all"></i> We build apps so fast and smooth, your phone might think it’s in a
+                race.</li>
+              <li><i class="bi bi-check2-all"></i> We design brands that are so cool, even your grandma will want a
+                T-shirt with
+                your logo on it.</li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section" data-aos="fade-up" data-aos-delay="50"
+      aria-labelledby="clients-heading">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="50">
+        <h2 id="clients-heading" class="visually-hidden">Our Clients</h2>
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 400,
+              "autoplay": {
+                "delay": 2000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/1.png" class="img-fluid" alt="Client 1 Logo"
+                width="200" height="100"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/2.png" class="img-fluid" alt="Client 2 Logo"
+                width="200" height="100"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/3.png" class="img-fluid" alt="Client 3 Logo"
+                width="200" height="100"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/4.png" class="img-fluid" alt="Client 4 Logo"
+                width="200" height="100"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/5.png" class="img-fluid" alt="Client 5 Logo"
+                width="200" height="100"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/6.png" class="img-fluid" alt="Client 6 Logo"
+                width="200" height="100"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/7.png" class="img-fluid" alt="Client 7 Logo"
+                width="200" height="100"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/8.png" class="img-fluid" alt="Client 8 Logo"
+                width="200" height="100"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section" data-aos="fade-right" data-aos-delay="50"
+      aria-labelledby="features-heading">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up" data-aos-delay="50">
+        <h2 id="services-heading">We</h2>
+        <p>Promise</p>
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up" data-aos-delay="50">
+        <h2 id="features-heading" class="visually-hidden">Features</h2>
+        <div class="row gy-4">
+          <!-- Left Side Features -->
+          <div class="col-lg-6">
+            <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-person-circle flex-shrink-0"></i>
+              <div>
+                <h3>Customer-Centric Approach</h3>
+                <p>We place the customer at the heart of everything we do, tailoring solutions that drive growth and
+                  enhance
+                  user satisfaction.</p>
+              </div>
+            </div><!-- End Features Item-->
+
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-briefcase flex-shrink-0"></i>
+              <div>
+                <h3>Professionalism and Expertise</h3>
+                <p>Our team brings top-tier expertise to every project, maintaining the highest standards of quality and
+                  attention to detail.</p>
+              </div>
+            </div><!-- End Features Item-->
+
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-cash-stack flex-shrink-0"></i>
+              <div>
+                <h3>Affordable and Cost-Effective Solutions</h3>
+                <p>We provide high-quality services at competitive prices, making technology accessible to businesses of
+                  all
+                  sizes.</p>
+              </div>
+            </div><!-- End Features Item-->
+          </div>
+
+          <!-- Right Side Features -->
+          <div class="col-lg-6">
+            <div class="features-item d-flex mt-5 mt-lg-0 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-person-lines-fill flex-shrink-0"></i>
+              <div>
+                <h3>Ongoing Support and Maintenance</h3>
+                <p>We offer continuous support, updates, and maintenance to ensure that your systems remain at peak
+                  performance.</p>
+              </div>
+            </div><!-- End Features Item-->
+
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="600">
+              <i class="bi bi-shield-lock flex-shrink-0"></i>
+              <div>
+                <h3>Secure and Reliable Solutions</h3>
+                <p>Security is a priority in all our solutions, ensuring your data and business are protected with the
+                  highest standards.</p>
+              </div>
+            </div><!-- End Features Item-->
+
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="700">
+              <i class="bi bi-lightbulb flex-shrink-0"></i>
+              <div>
+                <h3>Innovative and Cutting-Edge Technologies</h3>
+                <p>We use the latest technologies to build scalable, innovative solutions that help your business stay
+                  ahead
+                  of the curve.</p>
+              </div>
+            </div><!-- End Features Item-->
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+
+    <!-- Services Section -->
+    <section id="services" class="services section" data-aos="fade-left" data-aos-delay="50"
+      aria-labelledby="services-heading">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up" data-aos-delay="50">
+        <h2 id="services-heading">Our</h2>
+        <p>SERVICES</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <a href="service-details.html#software-development" class="stretched-link"
+                aria-label="Software Development Service">
+                <h3>Software Development</h3>
+              </a>
+              <p>We provide custom software development services to meet your business needs.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-laptop"></i>
+              </div>
+              <a href="service-details.html#web-development" class="stretched-link"
+                aria-label="Web Development Service">
+                <h3>Web Development</h3>
+              </a>
+              <p>Our team creates responsive and dynamic websites tailored to your business.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-palette"></i>
+              </div>
+              <a href="service-details.html#branding" class="stretched-link" aria-label="Branding Service">
+                <h3>Branding</h3>
+              </a>
+              <p>We offer comprehensive branding services including logo design and multimedia editing.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-tools"></i>
+              </div>
+              <a href="service-details.html#technical-solutions" class="stretched-link"
+                aria-label="Technical Solutions Service">
+                <h3>Technical Solutions</h3>
+              </a>
+              <p>Our experts provide technical solutions to streamline your business operations.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-book"></i>
+              </div>
+              <a href="service-details.html#college-projects" class="stretched-link"
+                aria-label="College Projects Service">
+                <h3>College Projects</h3>
+              </a>
+              <p>We assist students with their college projects, providing guidance and technical support.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-cart"></i>
+              </div>
+              <a href="service-details.html#ecommerce-solutions" class="stretched-link"
+                aria-label="E-commerce Solutions Service">
+                <h3>E-commerce Solutions</h3>
+              </a>
+              <p>We develop e-commerce platforms that help you sell your products online effectively.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Check Out Portfolio Section -->
+    <section id="check-portfolio" class="check-portfolio section dark-background" data-aos="zoom-in" data-aos-delay="50"
+      aria-labelledby="portfolio">
+      <img src="assets/img/cta-bg.jpg" alt="Check Out Background Image">
+
+      <div class="container" data-aos="zoom-in" data-aos-delay="50">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Explore Our Latest Projects!</h3>
+              <p>Join us in our mission to deliver cutting-edge solutions. Get in touch today to begin your journey with
+                our
+                exceptional services.</p>
+              <a class="cta-btn" href="/portfolio-details" aria-label="Get In Touch">Check Out!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- Check Out Portfolio Section -->
+
+
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section" data-aos="fade-down" data-aos-delay="50"
+      aria-labelledby="Statistics Overview">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up" data-aos-delay="50">
+        <h2 id="stats-heading" aria-label="Stats Overview">STATS</h2>
+        <p>Dedication And Results</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="50">
+        <h2 id="stats-heading" class="visually-hidden">Stats</h2>
+        <div class="row gy-4 align-items-center justify-content-between">
+
+          <div class="col-lg-12">
+            <p class="stats-description">
+              As the sole creator and operator of Legendary One, I specialize in delivering tailored digital solutions.
+              My work spans across web development, software creation, Android app development, and branding services.
+              Every project is crafted with meticulous attention to detail, ensuring that clients receive the highest
+              level
+              of quality and innovation. Here are some of my key achievements:
+            </p>
+
+            <div class="row gy-4">
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-person-check flex-shrink-0"></i>
+                  <div>
+                    <h3 data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1"
+                      class="purecounter"></h3>
+                    <p><strong>Happy Clients</strong> <span>through personalized web development, software, app
+                        solutions, and impactful
+                        branding.</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-journal-richtext flex-shrink-0"></i>
+                  <div>
+                    <h3 data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1"
+                      class="purecounter"></h3>
+                    <p><strong>Projects Completed</strong> <span>successfully delivering tailored web, software, and app
+                        solutions that make
+                        a difference.</span></p>
+
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-headset flex-shrink-0"></i>
+                  <div>
+                    <h3 data-purecounter-start="0" data-purecounter-end="660" data-purecounter-duration="1"
+                      class="purecounter"></h3>
+                    <p><strong>Hours of Work</strong> <span>dedicating countless hours to perfecting every detail and
+                        ensuring excellence in
+                        every project.</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-moon-stars flex-shrink-0"></i>
+                  <div>
+                    <h3 data-purecounter-start="0" data-purecounter-end="36" data-purecounter-duration="1"
+                      class="purecounter"></h3>
+                    <p><strong>Sleepless Nights</strong> <span>investing late nights to meet deadlines and achieve
+                        perfection in all aspects
+                        of the work.</span></p>
+                  </div>
+                </div>
+              </div><!-- End Stats Item -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section dark-background" data-aos="fade-up" data-aos-delay="50"
+      aria-labelledby="testimonials-heading">
+
+      <h2 id="testimonials-heading" class="visually-hidden">Testimonials</h2>
+      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="Testimonials Background Image">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="50">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            }
+          }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="Testimonial 1">
+                <h3>Vignesh Siva</h3>
+                <h4>CEO &amp; Founder</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>As the founder of Legendary One, I have always strived to deliver innovative solutions tailored
+                    to client
+                    needs. My mission is to drive success through creativity and dedication.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End CEO item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="Testimonial 2">
+                <h3>Vignesh Siva</h3>
+                <h4>Designer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>With a passion for design, I ensure every project reflects creativity and professionalism. From
+                    logos to web
+                    layouts, I bring ideas to life with precision and style.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End Designer item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="Testimonial 3">
+                <h3>Vignesh Siva</h3>
+                <h4>Freelancer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>My journey as a freelancer taught me the value of flexibility and personalized solutions. I’ve
+                    collaborated
+                    with diverse clients to achieve their unique goals efficiently.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End Freelancer item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="Testimonial 4">
+                <h3>Vignesh Siva</h3>
+                <h4>Entrepreneur</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Being an entrepreneur allows me to envision and execute impactful projects. I believe in
+                    building strong
+                    relationships and delivering results that speak for themselves.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End Entrepreneur item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section" data-aos="fade-up" data-aos-delay="50"
+      aria-labelledby="contact-heading">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up" data-aos-delay="50">
+        <h2 id="contact-heading">Contact</h2>
+        <p>Contact Us</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7820.6324503856!2d77.32621818419196!3d11.457085682502685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDI3JzI1LjUiTiA3N8KwMTknNDkuMiJF!5e0!3m2!1sen!2sin!4v1735314452327!5m2!1sen!2sin"
+            width="100%" height="450" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"
+            title="Map"></iframe>
+        </div><!-- End Google Maps -->
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>4, Eswaramoorthi Street, Kasipalayam</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+91 733 959 6165</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>legendaryoneff@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+          </div>
+
+          <div class="col-lg-8">
+            <form id="contactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name"
+                    required />
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email"
+                    required />
+                </div>
+                <div class="col-md-12">
+                  <label for="number" class="form-label">Contact Number</label>
+                  <input type="tel" id="number" name="number" class="form-control"
+                    placeholder="Enter your contact number" pattern="(?:\+91|0)?\d{10}" required
+                    title="Enter a valid phone number" />
+                </div>
+                <div class="col-md-12">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea id="message" name="message" class="form-control" rows="6" placeholder="Enter your message"
+                    required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div id="sending" style="display: none; color: green; font-weight: bold;">Sending....</div>
+                  <div id="response-message" style="margin-bottom: 10px;"></div>
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background" role="contentinfo">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center" aria-label="Legendary One Logo">
+              <span class="sitename">LEGENDARY ONE</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>4, Eswaramoorthi Street, Kasipalayam</p>
+              <p>Gobi, Erode</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+91 733 959 6165</span></p>
+              <p><strong>Email:</strong> <span>legendaryoneff@gmail.com</span></p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href="https://www.instagram.com/legendary_one_official?igsh=MTA2ZTY5NGhxN2tueg=="
+                aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/vignesh-k-59ba47183?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.facebook.com/vignesh.siva.kspm" aria-label="Facebook"><i
+                  class="bi bi-facebook"></i></a>
+              <a href="https://x.com/vigneshsivakspm" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h3>Useful Links</h3>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#hero">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/service-details">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/portfolio-details">Portfolio</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#contact">Contact</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/terms">Terms of service</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h3>Our Services</h3>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="/service-details#software-development"
+                  aria-label="Software Development Service">Software
+                  Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/service-details#web-development"
+                  aria-label="Web Development Service">Web Development</a>
+              </li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/service-details#branding"
+                  aria-label="Branding Service">Branding</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/service-details#technical-solutions"
+                  aria-label="Technical Solutions Service">Technical
+                  Solutions</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/service-details#college-projects"
+                  aria-label="College Projects Service">College
+                  Projects</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/service-details#ecommerce-solutions"
+                  aria-label="E-commerce Solutions Service">E-commerce
+                  Solutions</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <div class="container text-center">
+        <p>© <span>Copyright All Rights Reserved</span></p>
+        <div class="credits">
+          Developed By <a href="#hero">Legendary One</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+    aria-label="Scroll to top"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true"></div>
+
+  <!-- Floating WhatsApp Icon -->
+  <a href="https://wa.me/917339596165" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Add EmailJS via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js" defer></script>
+
+</body>
+
+</html>
